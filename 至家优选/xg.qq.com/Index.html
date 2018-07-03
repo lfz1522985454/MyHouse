@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="baidu-site-verification" content="Vuswp0A2R2"/>
+  <title>至家优选</title>
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="stylesheet" href="css/index.min.css">
+  <script type='text/javascript' src='js/aq_common.js'></script>
+  <script src="js/sea.js" id="seajsnode"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+
+  <style type="text/css">
+    #ma {
+      position: absolute;
+      top:300px;
+      left:900px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部菜单 Start -->
+<div class="top-menu-wrapper index-menu">
+  <div class="row">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="logo-wrapper">
+
+            <span class="logo"></span>
+            <div class="text" style="color: #ffffff">至家优选</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 顶部菜单 End -->
+
+  <!-- 内容 Start -->
+  <div class="main-content">
+  <div id="js_section-banner" class="onepage-scroll-item js_full-screen">
+    <div class="banner-wrapper">
+      <div class="row collapse banner-content">
+        <div class="js_banner-bg banner--background-1 mui-enter mui-enter-active"></div>
+        <div class="js_banner-bg banner--background-2 mui-enter"></div>
+        <div class="js_banner-bg banner--background-3 mui-enter"></div>
+        <svg class="banner--sides" version="1.1" id="js_banner-sides"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 1920 980" style="enable-background:new 0 0 1920 980;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill-rule:evenodd;clip-rule:evenodd;}
+            .st1{opacity:0.7;fill-rule:evenodd;clip-rule:evenodd;}
+          </style>
+          <defs>
+            <linearGradient id="Gradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#0FDEE0"/>
+              <stop offset="100%" stop-color="#9466FA">
+                <animate attributeName="stop-color" values="#698EF9; #9466FA; #698EF9" dur="4s" repeatCount="indefinite" />
+              </stop>
+            </linearGradient>
+          </defs>
+          <path class="st0" fill="url(#Gradient)" d="M360,0C274,67.6,37.1,276.2,0,570V0L360,0z"/>
+          <path class="st1" fill="url(#Gradient)" d="M1138,0c266.4,217.9,795.7,648.6,298,980l484,0V0L1138,0z"/>
+          <path class="st0" fill="url(#Gradient)" d="M1240,0c268.9,163.5,778.8,541.7,405.9,883.7c-40.7,37.3-70,69-90.6,96.3H1920V0L1240,0z"/>
+        </svg>
+
+        <div class="banner--text-area">
+          <h1 class="title">
+            至家优选
+          </h1>
+          <h4 class="subtitle">
+            满足你一切关于家的畅想
+          </h4>
+          <ul class="details">
+            <li>用最优惠的价格触达全球最前沿的时尚设计</li>
+            <li>至家优选独家推出新软装理念，不强调风格，只注重生活态度的诠释</li>
+            <li>通过“体验家”，就近体验心仪的产品，让那些深入人心的设计触手可及</li>
+          </ul>
+          <a class="index-button" href="https://pan.baidu.com/s/1o87RrMM?qq-pf-to=pcqq.c2c">app下载→</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <img src="images/erweima.png" alt="" id="ma">
+
+
+
+</div>
+
+<script type="text/javascript">
+(function(){
+  // Top banner
+  var bannerIndex = 0;
+  var $bannerBgs = $('.js_banner-bg');
+  var $bannerNotifications = $('.js_banner-notification');
+  function changeTopBanner(index) {
+    $bannerBgs.removeClass('mui-enter-active');
+    $($bannerBgs[index]).addClass('mui-enter-active');
+
+    $bannerNotifications.removeClass('mui-enter-active');
+    $($bannerNotifications[index]).addClass('mui-enter-active');
+  }
+
+  setInterval(function(){
+    if (bannerIndex < 2) {
+      bannerIndex++;
+      changeTopBanner(bannerIndex);
+    } else {
+      bannerIndex = 0;
+      changeTopBanner(bannerIndex);
+    }
+  }, 6000);
+})()
+</script>
+</body>
+</html>

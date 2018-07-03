@@ -1,0 +1,226 @@
+{
+  "kind": {
+    "keting": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    },
+    "woshi": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    },
+    "canting": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    },
+    "shufang": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    },
+    "jiafang": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    },
+    "shenghuo": {
+      "id": "",
+      "img": "img",
+      "title": "title",
+      "Goods": [
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "img": "img",
+          "name": "name"
+        }
+      ]
+    }
+  }
+}

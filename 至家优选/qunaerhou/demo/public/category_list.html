@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>产品列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="style/adminStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="page-title">
+        <span class="modular fl"><i></i><em>产品列表</em></span>
+        <span class="modular fr"><a href="category_add.html" class="pt-link-btn">+添加商品</a></span>
+    </div>
+    <div class="operate">
+        <form>
+            <select class="inline-select">
+                <option>A店铺</option>
+                <option>B店铺</option>
+            </select>
+            <input type="text" class="textBox length-long" placeholder="输入产品名称..."/>
+            <input type="button" value="查询" class="tdBtn"/>
+        </form>
+    </div>
+    <table class="list-style Interlaced">
+        <tr>
+            <th class="center">ID编号</th>
+            <th class="center">名称</th>
+            <th class="center">关键字</th>
+            <th class="center">说明</th>
+            <th class="center">显示/不显示</th>
+            <th class="center">操作</th>
+        </tr>
+        <tr v-for="(item,index) in result">
+            <td class="center">
+                {{item.CatID}}
+            </td>
+
+            <td class="center">
+                {{item.CatName}}
+            </td>
+            <td class="center">
+                {{item.Keywords}}
+            </td>
+            <td class="center">
+                {{item.Description}}
+            </td>
+
+            <td class="center" >
+                <template v-if="item.IsShow==0">
+                    <img src="images/no.gif"/>
+                </template>
+                <template v-else>
+                    <img src="images/yes.gif"/>
+                </template>
+            </td>
+            <td class="center">
+                <button class="btn btn-success" data-dismiss="modal" @click="tiao()">添加</button>
+            </td>
+        </tr>
+
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <div class="turnPage center fr">
+            <a>第一页</a>
+            <a>1</a>
+            <a>最后一页</a>
+        </div>
+    </div>
+
+
+
+
+</div>
+<script>
+
+
+    new Vue({
+        el: "#app",
+        data: {
+            result: []
+        },
+        methods: {
+
+            queryAll: function () {
+                var _this = this;
+                $.get("/categoryQuery", function (result) {
+                    _this.result = result;
+                })
+            },
+            tiao:function () {
+                window.location.href="category_add.html";
+            }
+
+        },
+        //生命钩子
+        created: function () {
+            this.queryAll();
+        }
+    });
+
+</script>
+</body>
+</html>

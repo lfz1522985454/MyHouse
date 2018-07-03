@@ -1,0 +1,32 @@
+{
+  "geren": {
+    "code": "",
+    "id": "id",
+    "name": "",
+    "touxiang": "",
+    "shouhuodizhi": "",
+    "phone": "",
+    "pwd": "pwd",
+    "daifukuan": [
+      {
+        "id": "",
+        "img": "",
+        "desc": ""
+      }
+    ],
+    "daishouhuo": [
+      {
+        "id": "",
+        "img": "",
+        "desc": ""
+      }
+    ],
+    "yiwanchen": [
+      {
+        "id": "",
+        "img": "",
+        "desc": ""
+      }
+    ]
+  }
+}

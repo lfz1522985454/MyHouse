@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>订单列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="style/adminStyle.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/public.js"></script>
+    <script type="" src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="page-title">
+        <span class="modular fl"><i class="order"></i><em>订单列表</em></span>
+    </div>
+    <div class="operate">
+        <form>
+            <img src="images/icon_search.gif"/>
+            <input type="text" class="textBox length-long" placeholder="输入订单编号"/>
+            <input type="button" value="查询" class="tdBtn"/>
+        </form>
+    </div>
+    <table class="list-style Interlaced">
+        <tr>
+
+            <th>订单编号</th>
+            <th>订单生成时间</th>
+            <th>客户</th>
+            <th>应付金额</th>
+            <th>订单状态</th>
+            <th>操作</th>
+
+        </tr>
+        <tr v-for="(item,index) in result">
+            <td class="center">
+                <span class="block">{{item.OrderID}}</span>
+            </td>
+            <td class="center">
+                <span class="block">{{item.CreateTime}}</span>
+            </td>
+            <td class="center">
+                <span class="block ">{{item.NickName}}</span>
+
+            </td>
+            <td class="center">
+                <span><i>￥</i>{{item.Payment}}</span>
+            </td>
+            <td class="center">
+
+                <template v-if="item.OrderStatus==0">
+                    <img src="images/no.gif"/>
+                </template>
+                <template v-else>
+                    <img src="images/yes.gif"/>
+                </template>
+
+
+            </td>
+            <td class="center">
+                <a href="order_detail.html" class="inline-block" title="查看订单" @click="index=item.OrderID"><img src="images/icon_view.gif"/></a>
+            </td>
+        </tr>
+    </table>
+    <!-- BatchOperation -->
+    <div style="overflow:hidden;">
+        <!-- Operation -->
+        <div class="BatchOperation fl">
+            <input type="checkbox" id="del"/>
+            <label for="del" class="btnStyle middle">全选</label>
+        </div>
+        <!-- turn page -->
+        <div class="turnPage center fr">
+            <a>第一页</a>
+            <a>1</a>
+            <a>最后一页</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<script>
+     new Vue({
+            el: "#app",
+            data: {
+                index:0,
+                result: []
+            },
+            methods: {
+                queryAll: function () {
+                    var _this = this;
+                    $.get("/orderQuery", function (result) {
+                        _this.result = result;
+                    });
+                }
+
+            },
+            created: function () {
+                this.queryAll();
+
+            }//页面创建完成时
+
+
+        })
+        ;
+
+
+</script>

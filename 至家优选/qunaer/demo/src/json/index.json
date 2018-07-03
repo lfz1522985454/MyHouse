@@ -1,0 +1,116 @@
+{
+  "index": {
+    "item1": [
+      {
+        "id": "int",
+        "name": "lun",
+        "image": "img",
+        "price": "jiage",
+        "desc": "desc"
+      }
+
+    ],
+    "item2": {
+      "name": "name",
+      "text": "desc",
+      "minprice": "price",
+      "goods": [
+        {
+          "id": "int",
+          "image": "img"
+        },
+        {
+          "id": "int",
+          "image": "img"
+        },
+        {
+          "id": "int",
+          "image": "img"
+        },
+        {
+          "id": "int",
+          "image": "img"
+        },
+        {
+          "id": "int",
+          "image": "img"
+        },
+        {
+          "id": "int",
+          "image": "img"
+        }
+      ]
+    },
+    "item3": {
+      "name": "优选限时购",
+      "price": "￥99",
+      "time": "19:30:00",
+      "desc": "抢购中下一场1天后开始",
+      "goods": "image"
+    },
+    "item4": {
+      "name": "name",
+      "goods": [
+        {
+          "id": "int",
+          "image": "img",
+          "price": "price",
+          "desc": "desc"
+        },
+        {
+          "id": "int",
+          "image": "img",
+          "price": "price",
+          "desc": "desc"
+        }
+      ]
+    },
+    "item5": {
+      "id": "id",
+      "image": "img"
+    },
+    "item6": {
+      "title": "体验家精选",
+      "image": "img",
+      "name": "枫丹公园",
+      "text": "desc"
+    },
+    "item7": [
+      {
+        "id": "id",
+        "mainImg": "main",
+        "img1": "img1",
+        "img2": "img2",
+        "img3": "img3",
+        "img4": "img4"
+      },
+      {
+        "id": "id",
+        "mainImg": "main",
+        "img1": "img1",
+        "img2": "img2",
+        "img3": "img3",
+        "img4": "img4"
+      }
+    ],
+    "item8": {
+      "name": "至家优选",
+      "goods": [
+        {
+          "id": "id",
+          "image": "img",
+          "price": "price",
+          "name": "name"
+        },
+        {
+          "id": "id",
+          "image": "img",
+          "price": "price",
+          "name": "name"
+        }
+      ]
+    }
+  }
+}
+
+

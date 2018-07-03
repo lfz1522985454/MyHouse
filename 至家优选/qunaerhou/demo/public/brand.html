@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>品牌列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="style/adminStyle.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="brand">
+    <div class="page-title">
+        <span class="modular fl"><em>品牌信息</em></span>
+    </div>
+
+    <table class="list-style Interlaced">
+        <tr>
+            <th>品牌编号</th>
+            <th>品牌名称</th>
+            <th>上传的该公司Logo图片</th>
+            <th>该品牌是否显示</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="(item,index) in result">
+            <td class="center">{{item.BrandID}}</td>
+            <td class="center">{{item.BrandName}}</td>
+            <td class="center"><img :src="item.BrandLogo" alt="" style="width: 140px;height: 50px"></td>
+            <td class="center"><span>
+                <template v-if="item.IsShow==0">
+                    <img src="images/no.gif">
+                </template>
+                <template v-else>
+                    <img src="images/yes.gif">
+                </template>
+            </span></td>
+            <td class="center">
+                <a href="#" title="详情"><img src="images/icon_view.gif"/></a>
+                <a title="删除"><img src="images/icon_drop.gif"/></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    new Vue({
+        el: "#brand",
+        data: {
+            result: [],
+        },
+        methods: {
+            queryAll: function () {
+                var _this = this;
+                $.get("/brandQuery", function (result) {
+                    _this.result = result;
+                });
+            }
+        },
+        //生命钩子
+        created: function () {
+            this.queryAll();
+        }
+    });
+</script>
+</body>
+</html>

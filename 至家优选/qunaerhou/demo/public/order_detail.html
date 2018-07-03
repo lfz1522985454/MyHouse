@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>订单详情</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style/adminStyle.css" rel="stylesheet" type="text/css" />
+ <script  src="js/vue.min.js"></script>
+ <script src="js/jquery.js"></script>
+ <script src="js/public.js"></script>
+</head>
+<body>
+ <div class="wrap">
+  <div class="page-title">
+    <span class="modular fl"><i class="order"></i><em>订单编号：2015041803225</em></span>
+  </div>
+  <dl class="orderDetail">
+   <dt class="order-h">订单详情</dt>
+   <dd>
+    <ul>
+     <li>
+      <span class="h-cont h-right">客户名称：</span>
+      <span class="h-cont h-left">{{UserID}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">支付方式：</span>
+      <span class="h-cont h-left">{{PayID}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">订单的状态：</span>
+      <span class="h-cont h-left">{{OrderStatus}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">发货状态：</span>
+      <span class="h-cont h-left">{{ShippingStatus}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">支付的状态：</span>
+      <span class="h-cont h-left">{{PayStatus}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">订单生成时间：</span>
+      <span class="h-cont h-left">{{CreateTime}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">订单支付时间：</span>
+      <span class="h-cont h-left">{{PayTime}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">订单完成时间：</span>
+      <span class="h-cont h-left">{{ConfirmTime}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">发货时间：</span>
+      <span class="h-cont h-left">{{ShippingStatus}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">已付金额：</span>
+      <span class="h-cont h-left">￥{{Payment}}</span>
+     </li>
+     <li>
+      <span class="h-cont h-right">配送费用：</span>
+      <span class="h-cont h-left">￥{{ShippingMoney}}</span>
+     </li>
+    </ul>
+   </dd>
+   <dd>
+
+   </dd>
+
+   <dd>
+      <!-- Operation -->
+	  <div class="BatchOperation">
+	   <input type="button" value="打印订单" class="btnStyle"/>
+	   <input type="button" value="取消订单" class="btnStyle"/>
+	  </div>
+   </dd>
+  </dl>
+ </div>
+</body>
+</html>
+
+
+<script>
+ new Vue({
+            el: "#app",
+            data: {
+                result: [],
+                obj:{
+
+                }
+            },
+            methods: {
+                queryAll: function () {
+                    var _this = this;
+                    $.get("/selectById", {id: position}, function (result) {
+                        for (var i = 0; i < result.length; i++) {
+                            _this.obj = result[i];
+                        }
+
+                    });
+
+                }
+
+            },
+            created: function () {
+                this.queryAll();
+
+            }//页面创建完成时
+
+
+        })
+        ;
+
+
+</script>

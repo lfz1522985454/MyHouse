@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>添加新会员</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="style/adminStyle.css" rel="stylesheet" type="text/css"/>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="page-title">
+        <span class="modular fl"><i class="add_user"></i><em>添加新会员</em></span>
+    </div>
+    <table class="list-style">
+        <tr>
+            <td style="width:15%;text-align:right;">商品名称：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.GoodsName"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">所属分类：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.CatID"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">品牌：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.BrandID"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">库存数：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.GoodsStock"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">售价：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.ShopPrice"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">详细描述：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.Description"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">微缩图片：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.Thumbnail"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">是否开放销售：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsSale"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">商品添加时间：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.CreateTime"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">商品是否已删除：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsDelete"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">是否是精品：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsBest"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">是否是新品：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsNew"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">是否是热销：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsHot"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">是否是特价：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsPromotion"/></td>
+        </tr>
+        <tr style="display: none;">
+            <td style="text-align:right;">备注：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.Remark"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">是否是显示：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.IsShow"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">大图1：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.DaTu1"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">大图2：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.DaTu2"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">大图3：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.DaTu3"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">小图1：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.XiaoTu1"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">小图2：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.XiaoTu2"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">小图3：</td>
+            <td><input type="text" class="textBox length-middle" v-model="obj.XiaoTu3"/></td>
+        </tr>
+        <tr>
+            <td style="text-align:right;"></td>
+            <td>
+                <button @click="add()"
+                        style="color:#FFFFFF;width: 100px;height: 30px;background-color: #86dc9d;border: 0;-webkit-border-radius: 10px">
+                    添加
+                </button>
+
+                <button @click="quxiao"
+                        style="color:#FFFFFF;width: 100px;height: 30px;background-color: #b13747;border: 0;-webkit-border-radius: 10px">
+                    取消
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            result: [],
+            obj: {
+                GoodsName: "",
+                CatID: "1",
+                BrandID: "1",
+                GoodsStock: "200",
+                ShopPrice: "",
+                Description: "",
+                Thumbnail: "",
+                IsSale: "1",
+                CreateTime: "2018-01-04",
+                IsDelete: "1",
+                IsBest: "1",
+                IsNew: "1",
+                IsHot: "1",
+                IsPromotion: "1",
+                Remark: "1",
+                IsShow: "",
+                DaTu1: "",
+                DaTu2: "",
+                DaTu3: "",
+                XiaoTu1: "",
+                XiaoTu2: "",
+                XiaoTu3: ""
+            }
+        },
+        methods: {
+            quxiao: function () {
+                this.obj = {};
+            },
+            add: function () {
+                var _this = this;
+                $.get("/Goodsadd", {
+                    GoodsName: this.obj.GoodsName,
+                    CatID: this.obj.CatID,
+                    BrandID: this.obj.BrandID,
+                    GoodsStock: this.obj.GoodsStock,
+                    ShopPrice: this.obj.ShopPrice,
+                    Description: this.obj.Description,
+                    Thumbnail: this.obj.Thumbnail,
+                    IsSale: this.obj.IsSale,
+                    CreateTime: this.obj.CreateTime,
+                    IsDelete: this.obj.IsDelete,
+                    IsBest: this.obj.IsBest,
+                    IsNew: this.obj.IsNew,
+                    IsHot: this.obj.IsHot,
+                    IsPromotion: this.obj.IsPromotion,
+                    Remark: this.obj.Remark,
+                    IsShow: this.obj.IsShow,
+                    DaTu1: this.obj.DaTu1,
+                    DaTu2: this.obj.DaTu2,
+                    DaTu3: this.obj.DaTu3,
+                    XiaoTu1: this.obj.XiaoTu1,
+                    XiaoTu2: this.obj.XiaoTu2,
+                    XiaoTu3: this.obj.XiaoTu3
+                }, function (result) {
+                    if (result == "true") {
+                        alert("添加成功");
+                    } else {
+                        alert("添加失败");
+                    }
+                    _this.obj = {};
+                });
+
+            }
+        },
+        created: function () {
+        }//页面创建完成时
+    })
+    ;
+
+
+</script>

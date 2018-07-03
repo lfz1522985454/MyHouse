@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动</title>
+    <style>
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body>
+<p>
+    请选择地区：
+    <select name="" id="proc" onchange="showCity()">
+        <option value="">--请选择省--</option>
+    </select>
+    <select name="" id="city" onchange="showDist()">
+        <option value="">--请选择市--</option>
+    </select>
+    <select name="" id="dist">
+        <option value="">--请选择区--</option>
+    </select>
+</p>
+<script type="text/javascript" src=""></script>
+<script>
+    //声明省
+    var oProc = ["安徽","上海","山东"]; //直接声明array
+    //声明市
+    var oCity = [
+        ["合肥","淮南","芜湖"],
+        ["浦东","闵行","浦西"],
+        ["济南","青岛","枣庄"]
+    ];
+    //声明区
+    var oDist = [
+        [
+            ["政务区","庐阳区","蜀山区"],
+            ["田家庵区","大通区","九龙岗区"],
+            ["镜湖区","鸠江区","三山区"]
+        ],
+        [
+            ["浦东1","浦东2","浦东3"],
+            ["闵行1","闵行2","闵行3"],
+            ["浦西1","浦西","浦西3"]
+        ],
+        [
+            ["历下区","天桥区","长清区"],
+            ["市南区","市北区","李沧区"],
+            ["薛城区","市中区","峄城区"]
+        ]
+    ];
+
+    //通过id找到标签元素
+
+    var oproc = document.getElementById("proc");
+    var ocity = document.getElementById("city");
+    var odist = document.getElementById("dist");
+
+    //当页面加载完毕之后
+
+    window.onload = function(){
+        for(var i =0;i<oProc.length;i++){
+//创建元素节点
+            var oOpt = document.createElement("option");
+//创建文本节点
+            var oTxt = document.createTextNode(oProc[i]);
+
+//添加到容器中去
+
+            oOpt.appendChild(oTxt);
+            oproc.appendChild(oOpt);
+        }
+    };
+
+    //显示城市列表
+
+    function showCity(){
+        if(oproc.value=="-1"){
+            ocity.options.length = 1;
+            odist.options.length = 1;
+        }else{
+            ocity.options.length = 1;
+            odist.options.length = 1;
+            var num = oproc.options.selectedIndex;
+//console.log(num);
+            for(var i =0;i<oCity[num-1].length;i++){
+                var oOpt = document.createElement("option");
+                var oTxt = document.createTextNode(oCity[num-1][i]);
+                oOpt.appendChild(oTxt);
+                ocity.appendChild(oOpt);
+            }
+        }
+    }
+
+    //显示列表
+
+    function showDist(){
+        if(ocity.value=='-1'){
+            odist.options.length = 1
+        }else{
+            odist.options.length = 1;
+            var numPro = oproc.options.selectedIndex;
+            var numCity = ocity.options.selectedIndex;
+            for(var i=0;i<oDist[numPro-1][numCity-1].length;i++){
+                var oOpt = document.createElement("option");
+                var oTxt = document.createTextNode(oDist[numPro-1][numCity-1][i]);
+                oOpt.appendChild(oTxt);
+                odist.appendChild(oOpt);
+            }
+        }
+    }
+</script>
+</body>
+</html>
